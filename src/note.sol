@@ -13,8 +13,8 @@ pragma solidity ^0.4.8;
 
 contract DSNote {
     event LogNote(
-        address  indexed  guy,
         bytes4   indexed  sig,
+        address  indexed  guy,
         bytes32  indexed  foo,
         bytes32  indexed  bar,
         bytes             fax
@@ -29,7 +29,7 @@ contract DSNote {
             bar := calldataload(4)
         }
 
-        LogNote(msg.sender, msg.sig, foo, bar, msg.data);
+        LogNote(msg.sig, msg.sender, foo, bar, msg.data);
 
         _;
     }
