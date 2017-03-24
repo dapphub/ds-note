@@ -17,6 +17,7 @@ contract DSNote {
         address  indexed  guy,
         bytes32  indexed  foo,
         bytes32  indexed  bar,
+	uint	 	  wad,
         bytes             fax
     ) anonymous;
 
@@ -29,7 +30,7 @@ contract DSNote {
             bar := calldataload(4)
         }
 
-        LogNote(msg.sig, msg.sender, foo, bar, msg.data);
+        LogNote(msg.sig, msg.sender, foo, bar, msg.value, msg.data);
 
         _;
     }
