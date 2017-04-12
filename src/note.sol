@@ -27,7 +27,7 @@ contract DSNote {
 
         assembly {
             foo := calldataload(4)
-            bar := calldataload(4)
+            bar := calldataload(36)
         }
 
         LogNote(msg.sig, msg.sender, foo, bar, msg.value, msg.data);
