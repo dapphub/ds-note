@@ -20,7 +20,7 @@ contract DSNoteTest is DSTest, DSNote {
     function test_3() { this.foo(1, 2, 3); }
 
     function foo() note {}
-    function foo(uint a) note {}
-    function foo(uint a, uint b) note {}
-    function foo(uint a, uint b, uint c) note {}
+    function foo(uint a) note { a; }
+    function foo(uint a, uint b) note { a; b; }
+    function foo(uint a, uint b, uint c) note { a; b; c; }
 }
