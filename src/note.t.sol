@@ -14,13 +14,13 @@ import "ds-test/test.sol";
 import "./note.sol";
 
 contract DSNoteTest is DSTest, DSNote {
-    function test_0() { this.foo(); }
-    function test_1() { this.foo(1); }
-    function test_2() { this.foo(1, 2); }
-    function test_3() { this.foo(1, 2, 3); }
+    function test_0() public { this.foo(); }
+    function test_1() public { this.foo(1); }
+    function test_2() public { this.foo(1, 2); }
+    function test_3() public { this.foo(1, 2, 3); }
 
-    function foo() note {}
-    function foo(uint a) note { a; }
-    function foo(uint a, uint b) note { a; b; }
-    function foo(uint a, uint b, uint c) note { a; b; c; }
+    function foo() public note {}
+    function foo(uint a) public note { a; }
+    function foo(uint a, uint b) public note { a; b; }
+    function foo(uint a, uint b, uint c) public note { a; b; c; }
 }
