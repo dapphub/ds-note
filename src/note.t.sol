@@ -11,7 +11,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-pragma solidity ^0.4.23;
+pragma solidity >0.4.23;
 
 import "ds-test/test.sol";
 
@@ -22,9 +22,11 @@ contract DSNoteTest is DSTest, DSNote {
     function test_1() public { this.foo(1); }
     function test_2() public { this.foo(1, 2); }
     function test_3() public { this.foo(1, 2, 3); }
+    function test_4() public { this.bar.value(uint(0x1234))(); }
 
     function foo() public note {}
     function foo(uint a) public note { a; }
     function foo(uint a, uint b) public note { a; b; }
     function foo(uint a, uint b, uint c) public note { a; b; c; }
+    function bar() public payable note {}
 }
