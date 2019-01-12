@@ -36,8 +36,8 @@ contract DSNote {
             wad := callvalue
         }
 
-        emit LogNote(msg.sig, msg.sender, foo, bar, wad, msg.data);
-
         _;
+
+        emit LogNote(msg.sig, msg.sender, foo, bar, wad, msg.data);
     }
 }
