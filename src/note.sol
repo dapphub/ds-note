@@ -33,7 +33,7 @@ contract DSNote {
         assembly {
             foo := calldataload(4)
             bar := calldataload(36)
-            wad := callvalue
+            wad := callvalue()
         }
 
         _;
