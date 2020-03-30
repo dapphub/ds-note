@@ -18,6 +18,7 @@ import "ds-test/test.sol";
 import "./note.sol";
 
 contract DSNoteTest is DSTest, DSNote {
+    function setUp() public { }
     function test_0() public { this.foo(); }
     function test_1() public { this.foo(1); }
     function test_2() public { this.foo(1, 2); }
